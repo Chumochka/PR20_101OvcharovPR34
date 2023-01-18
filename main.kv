@@ -1,0 +1,164 @@
+<Calculator>:
+    orientation: 'vertical'
+    Label:
+        id: resultlbl
+        text: ''
+        font_size: 24
+
+    GridLayout:
+
+        cols: 4
+        rows: 5
+
+        Button:
+            id: btnC
+            text: 'C'
+            background_color: (0.2,0.2,0.2,0.7)
+            font_size: 20
+            on_press: resultlbl.text = ''
+
+        Button:
+            id: btnPerc
+            text: '%'
+            background_color: (0.2,0.2,0.2,0.7)
+            font_size: 20
+            on_press:
+                sim = ['','+','—','/','*','^','%']
+                if(resultlbl.text[-1] not in sim): resultlbl.text += self.text
+
+        Button:
+            id: btnDel
+            text: 'DEL'
+            background_color: (0.2,0.2,0.2,0.7)
+            font_size: 20
+            on_press: resultlbl.text = resultlbl.text[:-1]
+
+        Button:
+            id: btnDiv
+            text: '/'
+            background_color: (0.2,0.2,0.2,0.7)
+            font_size: 20
+            on_press:
+                sim = ['','+','—','/','*','^','%']
+                if(resultlbl.text[-1] not in sim): resultlbl.text += self.text
+
+        Button:
+            id: btn7
+            text: '7'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btn8
+            text: '8'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btn9
+            text: '9'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btnMul
+            text: '*'
+            background_color: (0.2,0.2,0.2,0.7)
+            font_size: 20
+            on_press:
+                sim = ['','+','—','/','*','^','%']
+                if(resultlbl.text[-1] not in sim): resultlbl.text += self.text
+
+        Button:
+            id: btn4
+            text: '4'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btn5
+            text: '5'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btn6
+            text: '6'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btnMinus
+            text: '—'
+            background_color: (0.2,0.2,0.2,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btn1
+            text: '1'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btn2
+            text: '2'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btn3
+            text: '3'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btnPlus
+            text: '+'
+            background_color: (0.2,0.2,0.2,0.7)
+            font_size: 20
+            on_press:
+                sim = ['','+','—','/','*','^','%']
+                if(resultlbl.text[-1] not in sim): resultlbl.text += self.text
+
+        Button:
+            id: btn00
+            text: '00'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btn0
+            text: '0'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press: resultlbl.text += self.text
+
+        Button:
+            id: btnCom
+            text: '.'
+            background_color: (0.1,0.1,0.1,0.7)
+            font_size: 20
+            on_press:
+                sim = ['','+','—','/','*','^','%']
+                if(resultlbl.text[-1] not in sim): resultlbl.text += self.text
+                else: resultlbl.text += '0.'
+
+        Button:
+            id: btnEqual
+            text: '='
+            background_color: (1,0.3,0.1,1)
+            background_normal: ''
+            font_size: 20
+            on_press:
+                root.calculate(resultlbl.text)
